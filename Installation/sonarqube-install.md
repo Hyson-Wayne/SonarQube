@@ -14,8 +14,8 @@ Ensure you have the following before starting:
 ## **<span style="color:green">Step 1: Create Sonar User</span>**
 
 **Create a new user and set hostname:**
-```bash
-    
+
+```bash    
     # Create a new user 'sonar'
     sudo useradd sonar
 
@@ -25,25 +25,25 @@ Ensure you have the following before starting:
     # Set the hostname to 'sonar' and switch to 'sonar' user
     sudo hostnamectl set-hostname sonar
     sudo su - sonar
-    ```
+```
 
 ## **<span style="color:green">Step 2: Enable Password Authentication</span>**
 
 **Modify SSH configuration to allow password authentication:**
-    ```bash
-    
+
+```bash    
     # Update sshd_config to enable password authentication
     sudo sed -i "/^[^#]*PasswordAuthentication[[:space:]]no/c\PasswordAuthentication yes" /etc/ssh/sshd_config
 
     # Restart SSH service to apply changes
     sudo service sshd restart
-    ```
+```
 
 ## **<span style="color:green">Step 3: Install Java JDK 17 and Essential Software</span>**
 
 **Install essential software and Java JDK:**
-    ```bash
-    
+
+```bash    
     # Navigate to /opt directory
     cd /opt
 
@@ -55,13 +55,13 @@ Ensure you have the following before starting:
 
     # Verify Java installation
     java -version
-    ```
+```
 
 ## **<span style="color:green">Step 4: Download and Extract SonarQube</span>**
 
 **Download and extract SonarQube:**
 
-    ```bash
+```bash
     # Download SonarQube version 9.9.7
     sudo wget https://binaries.sonarsource.com/Distribution/sonarqube/sonarqube-9.9.7.96285.zip
 
@@ -73,40 +73,40 @@ Ensure you have the following before starting:
 
     # Rename the extracted directory for simplicity
     sudo mv sonarqube-9.9.7.96285 sonarqube
-    ```
+```
 
 ## **<span style="color:green">Step 5: Grant Permissions</span>**
 
 **Set ownership and permissions for the SonarQube directory:**
 
-    ```bash
+```bash
     # Change ownership of the SonarQube directory to 'sonar' user
     sudo chown -R sonar:sonar /opt/sonarqube/
 
     # Set permissions for the SonarQube directory
     sudo chmod -R 775 /opt/sonarqube/
-    ```
+```
 
 ## **<span style="color:green">Step 6: Start SonarQube Server</span>**
 
 **Start the SonarQube server:**
 
-    ```bash
+```bash
     # Start SonarQube
     sh /opt/sonarqube/bin/linux-x86-64/sonar.sh start
 
     # Check the status of SonarQube
     sh /opt/sonarqube/bin/linux-x86-64/sonar.sh status
-    ```
+```
 
 ## **<span style="color:green">Step 7: Verify SonarQube is Running</span>**
 
 **Verify if SonarQube is accessible:**
 
-    ```bash
+```bash
     # Check if SonarQube is running by curling localhost
     curl -v localhost:9000
-    ```
+```
 
 **Access SonarQube** in your browser at `http://<publicIP>:9000` using the default credentials:
 - **Username:** admin
