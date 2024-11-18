@@ -15,6 +15,7 @@ Ensure you have the following before starting:
 
 **Create a new user and set hostname:**
     ```bash
+    
     # Create a new user 'sonar'
     sudo useradd sonar
 
@@ -30,6 +31,7 @@ Ensure you have the following before starting:
 
 **Modify SSH configuration to allow password authentication:**
     ```bash
+    
     # Update sshd_config to enable password authentication
     sudo sed -i "/^[^#]*PasswordAuthentication[[:space:]]no/c\PasswordAuthentication yes" /etc/ssh/sshd_config
 
@@ -41,6 +43,7 @@ Ensure you have the following before starting:
 
 **Install essential software and Java JDK:**
     ```bash
+    
     # Navigate to /opt directory
     cd /opt
 
@@ -57,6 +60,7 @@ Ensure you have the following before starting:
 ## **<span style="color:green">Step 4: Download and Extract SonarQube</span>**
 
 **Download and extract SonarQube:**
+
     ```bash
     # Download SonarQube version 9.9.7
     sudo wget https://binaries.sonarsource.com/Distribution/sonarqube/sonarqube-9.9.7.96285.zip
@@ -74,6 +78,7 @@ Ensure you have the following before starting:
 ## **<span style="color:green">Step 5: Grant Permissions</span>**
 
 **Set ownership and permissions for the SonarQube directory:**
+
     ```bash
     # Change ownership of the SonarQube directory to 'sonar' user
     sudo chown -R sonar:sonar /opt/sonarqube/
@@ -85,6 +90,7 @@ Ensure you have the following before starting:
 ## **<span style="color:green">Step 6: Start SonarQube Server</span>**
 
 **Start the SonarQube server:**
+
     ```bash
     # Start SonarQube
     sh /opt/sonarqube/bin/linux-x86-64/sonar.sh start
@@ -96,6 +102,7 @@ Ensure you have the following before starting:
 ## **<span style="color:green">Step 7: Verify SonarQube is Running</span>**
 
 **Verify if SonarQube is accessible:**
+
     ```bash
     # Check if SonarQube is running by curling localhost
     curl -v localhost:9000
