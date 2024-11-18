@@ -14,7 +14,7 @@ Ensure you have the following before starting:
 ## **<span style="color:green">Step 1: Create Sonar User</span>**
 
 **Create a new user and set hostname:**
-    ```bash
+```bash
     
     # Create a new user 'sonar'
     sudo useradd sonar
