@@ -20,10 +20,10 @@ sudo yum install java-17-openjdk-devel -y
 java -version
 
 # Step 4: Download and Extract SonarQube
-sudo wget https://binaries.sonarsource.com/Distribution/sonarqube/sonarqube-9.9.7.96285.zip
-sudo unzip sonarqube-9.9.7.96285.zip
-sudo rm -rf sonarqube-9.9.7.96285.zip
-sudo mv sonarqube-9.9.7.96285 sonarqube
+sudo wget https://binaries.sonarsource.com/Distribution/sonarqube/sonarqube-9.9.8.100196.zip
+sudo unzip sonarqube-9.9.8.100196.zip
+sudo rm -rf sonarqube-9.9.8.100196.zip
+sudo mv sonarqube-9.9.8.100196 sonarqube
 
 # Step 5: Grant Permissions
 sudo chown -R sonar:sonar /opt/sonarqube/
